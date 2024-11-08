@@ -1,0 +1,12 @@
+Buyer.objects.create(name='Max', balance=5200, age=25)
+Buyer.objects.create(name='Ann', balance=3060, age=32)
+Buyer.objects.create(name='Nik', balance=2870, age=12)
+
+Game.objects.create(title='Cyberpunk 2077', cost=1500, size=46.7, description='Action/RPG', age_limited=True)
+Game.objects.create(title='Genshin Impact', cost=500, size=132.54, description='Action/RPG')
+Game.objects.create(title='Left 4 Dead', cost=1200, size=23.38, description='Survival Horror', age_limited=True)
+
+Game.objects.get(id=1).buyer.set((1, 2))
+Game.objects.get(id=2).buyer.set((1, 2, 3))
+Game.objects.get(id=3).buyer.set((3,)) # связала не с тем покупателем
+Game.objects.get(id=3).buyer.set((1,)) # изменила на нужного
